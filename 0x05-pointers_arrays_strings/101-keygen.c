@@ -19,7 +19,7 @@ void generate_password() {
 
 			        password[5] = '\0';
 
-				    printf("Generated password: %s\n", password);
+				    printf("%s Congrats\n", password);
 }
 
 /**
