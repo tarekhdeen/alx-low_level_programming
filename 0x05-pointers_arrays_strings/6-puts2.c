@@ -12,7 +12,7 @@ void puts2(char *str)
 	while (str[i] != '\0')
 	{
 		printf("%c", str[i]);
-		(i + 1) / 2;
+		i += 1 / 2;
 	}
 	printf("\n");
 }
