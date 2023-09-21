@@ -19,11 +19,11 @@ char *leet(char *str)
 
 	while (*ptr)
 	{
-		char c = *ptr;
+		int c = *ptr;
 
 		if (leetMap[c])
 		{
-			*ptr = leetMap[c]
+			*ptr = leetMap[c];
 		}
 		ptr++;
 	}
