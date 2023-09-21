@@ -10,18 +10,18 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	while (*str1 != '\0' && *str2 != '\0')
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		if (*str1 < *str2)
+		if (*s1 < *s2)
 			return (-1);
-		if (*str1 > *str2)
+		if (*s1 > *s2)
 			return (1);
-		str1++;
-		str2++;
+		s1++;
+		s2++;
 	}
-	if (*str1 == '\0' && *str2 == '\0')
+	if (*s1 == '\0' && *s2 == '\0')
 		return (0);
-	if (*str1 == '\0')
+	if (*s1 == '\0')
 		return (-1);
 	return (1);
 }
