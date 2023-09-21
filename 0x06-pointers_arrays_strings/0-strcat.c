@@ -10,19 +10,12 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
-	{
-		dest++;
-	}
+	size_t dest_len = strlen(dest);
+	size_t i;
 
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-
-	*dest = '\0';
+	for (i = 0; src[i] != '\0'; i++)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
 
 	return (dest);
 }
