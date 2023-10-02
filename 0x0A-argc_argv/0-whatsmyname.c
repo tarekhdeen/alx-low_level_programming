@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -7,15 +7,7 @@
  */
 int main(void)
 {
-	char *filename = __FILE__;
-
-	while (*filename != '\0')
-	{
-		_putchar(*filename);
-		filename++;
-	}
-
-	_putchar('\n');
+	printf("%s\n", __FILE__);
 
 	return (0);
 }
