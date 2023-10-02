@@ -2,12 +2,17 @@
 
 /**
  * main - Entry point
+ * @argc: argument c
+ * @argv: argument v
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-	printf("%s\n", __FILE__);
+	if (argc > 0)
+	{
+	printf("%s\n", argv[0]);
+	}
 
 	return (0);
 }
