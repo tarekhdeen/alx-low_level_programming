@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -9,15 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int count = argc - 1;
+	(void)argv;
 
-	while (count > 0)
-	{
-		_putchar('0' + (count % 10));
-		count /= 10;
-	}
-
-	_putchar('\n');
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
