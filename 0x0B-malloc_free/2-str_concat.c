@@ -12,7 +12,7 @@ int string_length(char *str)
 {
 	int len = 0;
 
-	while (str[len] != '\0')
+	while (str != NULL && str[len] != '\0')
 	{
 		len++;
 	}
@@ -31,9 +31,14 @@ char *str_concat(char *s1, char *s2)
 	int len_s1, len_s2, combined_len, i, j;
 	char *con;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+	}
+
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
 	len_s1 = string_length(s1);
