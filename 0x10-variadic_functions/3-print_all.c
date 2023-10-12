@@ -8,38 +8,38 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	char *separator = "";
-	int i = 0;
-	char *str;
+	const char *separator = "";
+	int i = 0;	char *str;	char c;
+	int num;	double d;	va_list args;
 
 	va_start(args, format);
-
 	while (format && format[i])
 	{
-		if (format[i] == 'c')
+		switch (format[i])
 		{
-			printf("%s%c", separator, va_arg(args, int));
-		}
-		else if (format[i] == 'i')
-		{
-			printf("%s%d", separator, va_arg(args, int));
-		}
-		else if (format[i] == 'f')
-		{
-			printf("%s%f", separator, va_arg(args, double));
-		}
-		else if (format[i] == 's')
-		{
-			str = va_arg(args, char*);
-			if (str == NULL)
-			{
-				printf("%s(nil)", separator);
-			}
-			else
-			{
-				printf("%s%s", separator, str);
-			}
+			case 'c':
+				c = va_arg(args, int);
+				printf("%s%c", separator, c);
+				break;
+			case 'i':
+				num = va_arg(args, int);
+				printf("%s%d", separator, num);
+				break;
+			case 'f':
+				d = va_arg(args, double);
+				printf("%s%f", separator, d);
+				break;
+			case 's':
+				str = va_arg(args, char*);
+				if (str == NULL)
+				{
+					printf("%s(nil)", separator);
+				}
+				if (str != NULL)
+				{
+					printf("%s%s", separator, str);
+				}
+				break;
 		}
 
 		separator = ", ";
