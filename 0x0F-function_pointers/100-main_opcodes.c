@@ -10,16 +10,17 @@ void print_opcodes(int num_bytes)
 	int i;
 	unsigned char *ptr = (unsigned char *)print_opcodes;
 
-	if (ptr != NULL)
+	if (ptr == NULL || print_opcodes == NULL)
+	{
+		return;
+	}
+
+	if (ptr != NULL || print_opcodes != NULL)
 	{
 		for (i = 0; i < num_bytes; i++)
 		{
 			printf("%02x", *(ptr + i));
 		}
-	}
-	else
-	{
-		printf("Error: Unable to retrieve opcodes.\n");
 	}
 
 	printf("\n");
