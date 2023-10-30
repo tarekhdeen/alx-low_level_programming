@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
 {
 	int fd;
 	ssize_t bytes_read;
+	Elf64_Ehdr header;
 
 	if (argc != 2)
 		print_error("Usage: elf_header elf_filename");
@@ -61,8 +62,6 @@ int main(int argc, char *argv[])
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		print_error("Error: Unable to open file");
-
-	Elf64_Ehdr header;
 
 	bytes_read = read(fd, &header, sizeof(header));
 
