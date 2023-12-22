@@ -146,7 +146,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  *
  * Return: value with key or NULL
  */
-char *shash_table_get(const hash_table_t *ht, const char *key)
+char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int index;
 	shash_node_t *tmp;
